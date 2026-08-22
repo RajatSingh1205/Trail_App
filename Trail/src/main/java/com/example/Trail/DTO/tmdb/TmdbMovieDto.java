@@ -7,15 +7,15 @@ import java.util.List;
 @Data
 public class TmdbMovieDto {
 
+    private int id;
+
     private boolean adult;
 
-    @JsonProperty("backdrop_path")
-    private String backdropPath;
+//    @JsonProperty("backdrop_path")
+//    private String backdropPath;
 
     @JsonProperty("genre_ids")
     private List<Integer> genreIds;
-
-    private int id;
 
     @JsonProperty("original_language")
     private String originalLanguage;
@@ -23,9 +23,9 @@ public class TmdbMovieDto {
     @JsonProperty("original_title")
     private String originalTitle;
 
-    private String overview;
-
-    private double popularity;
+//    private String overview;
+//
+//    private double popularity;
 
     @JsonProperty("poster_path")
     private String posterPath;
@@ -35,11 +35,11 @@ public class TmdbMovieDto {
 
     private String title;
 
-    private boolean video;
+//    private boolean video;
 
     @JsonProperty("vote_average")
     private double voteAverage;
 
-    @JsonProperty("vote_count")
-    private int voteCount;
+//    @JsonProperty("vote_count")
+//    private int voteCount;
 }
