@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Search, X } from "lucide-react";
 import { FastAverageColor } from "fast-average-color";
 import { searchMovies } from "../services/MovieServices";
+import {useNavigate} from "react-router-dom";
 
 const SearchBox = ({ isOpen, onClose }) => {
     const [query, setQuery] = useState("");
@@ -11,6 +12,8 @@ const SearchBox = ({ isOpen, onClose }) => {
     const [colors, setColors] = useState({});
 
     const fac = useRef(new FastAverageColor());
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!isOpen) {
@@ -74,6 +77,7 @@ const SearchBox = ({ isOpen, onClose }) => {
                         {results.length > 0 ? (
                             results.map((movie) => (
                                 <div
+                                    onClick={() => navigate(`/movie/${movie.id}`)}
                                     key={movie.id}
                                     onMouseEnter={() => setHoveredId(movie.id)}
                                     onMouseLeave={() => setHoveredId(null)}
